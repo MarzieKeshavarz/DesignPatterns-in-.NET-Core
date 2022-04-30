@@ -3,6 +3,10 @@
 using DesignPattern.MementoPattern;
 using DesignPattern.State_Pattern;
 
+/// <summary>
+/// MementoPattern
+/// </summary>
+
 //var editor = new Editor();
 
 //editor.SetContent("content1");
@@ -23,6 +27,12 @@ using DesignPattern.State_Pattern;
 //Console.WriteLine(editor.GetContent());
 //Console.WriteLine(editor.GetFontName());
 //Console.WriteLine(editor.GetFontSize());
+
+
+
+/// <summary>
+/// StatePattern
+/// </summary>
 
 var Claculator = new Claculator();
 Claculator.SetTravelMode(new BicyclingCalculator());
