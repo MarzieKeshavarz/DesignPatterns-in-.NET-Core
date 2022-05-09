@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using DesignPattern.IteratorPattern;
 using DesignPattern.MementoPattern;
 using DesignPattern.State_Pattern;
 
@@ -34,9 +35,27 @@ using DesignPattern.State_Pattern;
 /// StatePattern
 /// </summary>
 
-var Claculator = new Claculator();
-Claculator.SetTravelMode(new BicyclingCalculator());
+//var Claculator = new Claculator();
+//Claculator.SetTravelMode(new BicyclingCalculator());
 
-Claculator.GetDirection();
-Claculator.GetETA();
+//Claculator.GetDirection();
+//Claculator.GetETA();
 
+
+/// <summary>
+/// IteratorPattern
+/// </summary>
+
+var productManager = new ProductManager();
+productManager.Push(new Product(1, "a"));
+productManager.Push(new Product(2, "b"));
+productManager.Push(new Product(3, "c"));
+
+
+var iterator = productManager.CreateIterator();
+
+while (iterator.HasNext())
+{
+    Console.WriteLine(iterator.Current().toString());
+    iterator.GetNext();
+}
