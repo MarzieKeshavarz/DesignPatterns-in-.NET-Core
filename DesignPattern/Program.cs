@@ -3,6 +3,7 @@
 using DesignPattern.IteratorPattern;
 using DesignPattern.MementoPattern;
 using DesignPattern.State_Pattern;
+using DesignPattern.StrategyPattern;
 
 /// <summary>
 /// MementoPattern
@@ -46,16 +47,27 @@ using DesignPattern.State_Pattern;
 /// IteratorPattern
 /// </summary>
 
-var productManager = new ProductManager();
-productManager.Push(new Product(1, "a"));
-productManager.Push(new Product(2, "b"));
-productManager.Push(new Product(3, "c"));
+//var productManager = new ProductManager();
+//productManager.Push(new Product(1, "a"));
+//productManager.Push(new Product(2, "b"));
+//productManager.Push(new Product(3, "c"));
 
 
-var iterator = productManager.CreateIterator();
+//var iterator = productManager.CreateIterator();
 
-while (iterator.HasNext())
-{
-    Console.WriteLine(iterator.Current().toString());
-    iterator.GetNext();
-}
+//while (iterator.HasNext())
+//{
+//    Console.WriteLine(iterator.Current().toString());
+//    iterator.GetNext();
+//}
+
+
+
+/// <summary>
+/// StrategyPattern
+/// </summary>
+
+var aESEncryption = new TextEncryption(new AESEncryption());
+var dESEncryption = new TextEncryption(new DESEncryption());
+aESEncryption.Encrypt("hello ");
+dESEncryption.Encrypt("world ");
