@@ -1,5 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using DesignPattern.CommandPattern;
+using DesignPattern.CommandPattern.FW;
+using DesignPattern.CommandPattern.Services;
 using DesignPattern.IteratorPattern;
 using DesignPattern.MementoPattern;
 using DesignPattern.State_Pattern;
@@ -73,6 +76,27 @@ using DesignPattern.TemplateMethodPattern;
 /// TemplateMethodPattern
 /// </summary>
 
-var homeWindow = new HomeWindow(new CachData());
-homeWindow.CloseWindow();
+//var homeWindow = new HomeWindow(new CachData());
+//homeWindow.CloseWindow();
 
+/// <summary>
+/// CommandPattern
+/// </summary>
+
+var history = new DesignPattern.CommandPattern.FW.History();
+var editor = new VideoEditor();
+
+var lableCommand = new LabelCommand(editor, history);
+lableCommand.execute();
+Console.WriteLine("label status :" +editor.GetHasLabel());
+
+var undoCommand = new UndoCommand(history);
+undoCommand.execute();
+Console.WriteLine("label status :" + editor.GetHasLabel());
+
+var contrastCommand = new ConstrastCommand(editor, history);
+contrastCommand.execute();
+Console.WriteLine("contrast status :" + editor.GetContrast());
+
+undoCommand.execute();
+Console.WriteLine("contrast status :" + editor.GetContrast());
