@@ -4,6 +4,7 @@ using DesignPattern.IteratorPattern;
 using DesignPattern.MementoPattern;
 using DesignPattern.State_Pattern;
 using DesignPattern.StrategyPattern;
+using DesignPattern.TemplateMethodPattern;
 
 /// <summary>
 /// MementoPattern
@@ -30,8 +31,6 @@ using DesignPattern.StrategyPattern;
 //Console.WriteLine(editor.GetFontName());
 //Console.WriteLine(editor.GetFontSize());
 
-
-
 /// <summary>
 /// StatePattern
 /// </summary>
@@ -41,7 +40,6 @@ using DesignPattern.StrategyPattern;
 
 //Claculator.GetDirection();
 //Claculator.GetETA();
-
 
 /// <summary>
 /// IteratorPattern
@@ -61,13 +59,20 @@ using DesignPattern.StrategyPattern;
 //    iterator.GetNext();
 //}
 
-
-
 /// <summary>
 /// StrategyPattern
 /// </summary>
 
-var aESEncryption = new TextEncryption(new AESEncryption());
-var dESEncryption = new TextEncryption(new DESEncryption());
-aESEncryption.Encrypt("hello ");
-dESEncryption.Encrypt("world ");
+//var aESEncryption = new TextEncryption(new AESEncryption());
+//var dESEncryption = new TextEncryption(new DESEncryption());
+//aESEncryption.Encrypt("hello ");
+//dESEncryption.Encrypt("world ");
+
+
+/// <summary>
+/// TemplateMethodPattern
+/// </summary>
+
+var homeWindow = new HomeWindow(new CachData());
+homeWindow.CloseWindow();
+
